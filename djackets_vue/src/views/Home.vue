@@ -11,6 +11,7 @@
       </div>
     </section>
     <div class="'columns is-multiline">
+      <div class=" row">
       <div class="column is-12">
           <h2 class="is-size-2 has-text-centered">Latest products</h2>
       </div>
@@ -25,8 +26,9 @@
           </figure>
           <h3 class="is-size-4">{{ product.name }}</h3>
           <p class="is-size-6 has-text-grey">${{ product.price }}</p>
-          view details
+          <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View Details</router-link>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -63,10 +65,14 @@ export default {
 </script>
 
 <style>
+  
   .image{
     margin-top: -1.25rem;
     margin-left: -1.25rem;
     margin-right:-1.25rem;
 
+  }
+  .image img{
+    height: 20rem;
   }
 </style>

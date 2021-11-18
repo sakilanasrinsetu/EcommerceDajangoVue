@@ -11,7 +11,7 @@ from .models import Product
 
 class LatestProductList(APIView):
     def get(self, request, format=None):
-        products = Product.objects.all()[0:4]
+        products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
