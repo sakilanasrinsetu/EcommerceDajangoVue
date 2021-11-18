@@ -34,6 +34,7 @@
 </template>
 <script>
 import axios from "axios"
+import  { toast } from 'bulma-toast'
     export default{
         name: 'Product',
         data() {
@@ -60,7 +61,7 @@ import axios from "axios"
                     })
             },
             addToCart(){
-                console.log('aaaaaaaaa')
+                // console.log('aaaaaaaaa')
                 if (isNaN(this.quantity) || this.quantity <1){
                     this.quantity =1
                 }
@@ -71,6 +72,15 @@ import axios from "axios"
                 }
 
                 this.$store.commit('addToCart', item)
+
+                toast({
+                    message: "This product was added to the cart",
+                    type: 'is-success',
+                    dismissible: true,
+                    pauseOnHover: true,
+                    duration: 2000,
+                    position: 'bottom-right',
+                })
             }
         }
     }
