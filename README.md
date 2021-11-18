@@ -1,1 +1,1 @@
-# EcommerceDajangoVue
+This is a demo ecommerce site.
