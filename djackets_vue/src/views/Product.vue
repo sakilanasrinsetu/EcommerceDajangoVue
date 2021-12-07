@@ -48,7 +48,7 @@ import  { toast } from 'bulma-toast'
         },
         methods:{
             async getProduct(){
-                this.$store.commit('setLoading', true)
+                this.$store.commit('setIsLoading', true)
                 const category_slug = this.$route.params.category_slug
                 const product_slug = this.$route.params.product_slug
 
